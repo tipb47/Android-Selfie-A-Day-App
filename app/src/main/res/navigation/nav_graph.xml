@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/appSplash">
+
+    <fragment
+        android:id="@+id/appSplash"
+        android:name="com.example.project9.AppSplash"
+        android:label="fragment_app_splash"
+        tools:layout="@layout/fragment_app_splash" >
+        <action
+            android:id="@+id/action_appSplash_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_appSplash_to_imagesFragment"
+            app:destination="@id/imagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.project9.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_imagesFragment"
+            app:destination="@id/imagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.project9.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imagesFragment"
+        android:name="com.example.project9.ImagesFragment"
+        android:label="fragment_images"
+        tools:layout="@layout/fragment_images" >
+        <action
+            android:id="@+id/action_imagesFragment_to_fullScreenImageFragment"
+            app:destination="@id/fullScreenImageFragment" />
+        <action
+            android:id="@+id/action_imagesFragment_to_selfieCameraFragment"
+            app:destination="@id/selfieCameraFragment" />
+        <action
+            android:id="@+id/action_imagesFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullScreenImageFragment"
+        android:name="com.example.project9.FullScreenImageFragment"
+        android:label="fragment_full_screen_image"
+        tools:layout="@layout/fragment_full_screen_image" >
+        <action
+            android:id="@+id/action_fullScreenImageFragment_to_imagesFragment"
+            app:destination="@id/imagesFragment" />
+        <action
+            android:id="@+id/action_fullScreenImageFragment_to_selfieCameraFragment"
+            app:destination="@id/selfieCameraFragment" />
+        <argument
+            android:name="imageId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/selfieCameraFragment"
+        android:name="com.example.project9.SelfieCameraFragment"
+        android:label="fragment_selfie_camera"
+        tools:layout="@layout/fragment_selfie_camera" >
+        <argument
+            android:name="imageId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_selfieCameraFragment_to_imagesFragment"
+            app:destination="@id/imagesFragment" />
+    </fragment>
+</navigation>
